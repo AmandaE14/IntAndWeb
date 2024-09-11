@@ -1,0 +1,9 @@
+1. An **inline** element does not start on a new line.
+2. Image files can be accessed **relative** to the HTML file.
+3. The **compression** algorithm for a PNG file is lossless.
+4. The **form** element gives you a set of input elements to collect data from your users.
+5. CSS makes **style** rules for HTML elements.
+6. More specific **selectors** (such as using an ID instead of a class) will take precedence over less specific **selectors**.
+7. HTML treats every element as living in its own **box**.
+8. Specifying auto as the second parameter of margin basically tells the browser to automatically determine the left and right margins itself, which it does by setting them **equally**.
+9. The **padding** property allows you to specify how much space should appear between the content of an element and its border.
