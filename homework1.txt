@@ -1,8 +1,8 @@
-1. HTML stands for HyperText Markup Language. It is the standard language for making websites. It organizes the contents of a webpage.
+1. HTML stands for HyperText Markup Language. It is the standard language for making websites. Markup languages, such as HTML, are used to structure and define web content. They use tags to organize text, images, and links, separating the structure and meaning from what is displayed. HTML's semantic tags optimize accessibility, SEO, and readability.
 2. CSS stands for Cascading Style Sheets. It is used to design web pages. It determines the colors, fonts, spacing, and layout.
 3. The Fordham website features a header for navigation, main sections for important information and a footer with more links. The layout is straightforward, making it easy for users find information.
-4. An HTML element is a piece of content in a webpage. A tag is the code that defines the element. An attribute provides additional information about the element.
+4. An HTML element is a piece of content in a webpage. It wraps content to define the purpose and organization of a webpage. It instructs the browser how to display the information, such as whether it should be a text, a link, or an image. It also influences how the content behaves and interacts with other elements. A tag is the code that defines the element and an attribute provides additional information about the element.
 5. A CSS rule is made up of a selector and a declaration block that includes features like color and size.
-6. CSS rules cascade, which means that the order of the rules counts. If many rules apply to the same element, the latest or most specific rule takes priority.
+6. CSS rules cascade according to four major factors: specificity, source order, inheritance, and the !important rule, which supersedes all other rules regardless of specificity or source order.
 7. <img src="../images/pinecone.jpg" alt="Pinecone">
 8. Submitting an HTML form sends the form data to the server and refreshes the current page.
