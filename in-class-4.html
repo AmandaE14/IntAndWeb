@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS example</title>
+    <script src="in-class-4.js"></script>
+    <script>
+        const firstObject = {
+            name: 'Amanda',
+            echo: function() {
+                console.log(this.name);
+            }
+        };
+
+        firstObject.echo();
+
+        firstObject.name = 'Estevez';
+
+        firstObject.echo();
+    </script>
+</head>
+<body>
+    <h1>JS Example</h1>
+</body>
+</html>

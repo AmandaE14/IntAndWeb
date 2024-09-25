@@ -1,0 +1,8 @@
+1. In certain programming languages the source code is not directly translated by the target machine. Instead, a different program, aka the interpreter, reads and executes the code, this is called an interpreted language.
+2. Type checking is performed at runtime, means that the type of a variable is allowed to change over its lifetime, this is called dynamic typing.
+3. JS for web browser work doesn’t tend to use classes to make objects, and is written in a more functional style.
+4. Variables that are block scoped, not declarable use the keyword const.
+5. Scope determines the accessibility (visibility) of variables.
+6. Variables assigned with the let keyword are block scoped and not redeclarable.
+7. Functions that can be passed as an argument to another function and called later are called callback functions.
+8. Non-primitive data types are (almost) all technically objects in memory.
