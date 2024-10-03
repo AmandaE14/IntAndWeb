@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Adoption</title>
+</head>
+<body>
+    <h1>Adopted Cats</h1>
+    <p id="adopted-cats"></p>
+
+    <h2>Ternary Operator Example</h2>
+    <p id="random-value"></p>
+
+    <h2>Comparison Operator Example</h2>
+    <p id="comparison-result"></p>
+
+    <h2>Map Function Example</h2>
+    <p id="map-result"></p>
+
+    <script>
+        const cats = [
+            { name: 'Charlie', adoptionStatus: 'available' },
+            { name: 'Lily', adoptionStatus: 'not-available' },
+            { name: 'Coco', adoptionStatus: 'available' },
+            { name: 'Oreo', adoptionStatus: 'not-available' },
+            { name: 'Luna', adoptionStatus: 'available' },
+            { name: 'Milo', adoptionStatus: 'available' },
+            { name: 'Lola', adoptionStatus: 'not-available' },
+            { name: 'Leo', adoptionStatus: 'available' },
+            { name: 'Willow', adoptionStatus: 'available' },
+            { name: 'Bella', adoptionStatus: 'not-available' },
+            { name: 'Max', adoptionStatus: 'available' },
+            { name: 'Cleo', adoptionStatus: 'available' },
+            { name: 'Lucy', adoptionStatus: 'not-available' },
+            { name: 'Daisy', adoptionStatus: 'available' }
+        ];
+
+        let resultArray = [];
+
+        for (let i = 0; i < cats.length; i++) {
+            if (cats[i].adoptionStatus === 'available') {
+                resultArray.push(cats[i].name);
+            }
+        }
+
+        let adoptedCatsSentence = `You have adopted the following cats: ${resultArray.join(', ')}.`;
+        document.getElementById('adopted-cats').innerText = adoptedCatsSentence;
+
+        let randomNumber = Math.random() * 10;
+        let message = randomNumber > 5 ? "greater than five!" : "less than five!";
+        document.getElementById('random-value').innerText = `The number is ${randomNumber.toFixed(2)}, which is ${message}`;
+
+        const cat = {name: "Pinecone", age: 13, type: 'Munchkin', cuteness: 9001};
+        for (let value of Object.values(cat)) {
+            console.log(value);
+        }
+
+        let comparisonResult;
+        if (1 == '1') {
+            comparisonResult = "1 == '1' is true";
+        }
+
+        if (1 === '1') {
+            comparisonResult = "1 === '1' is true";
+        } else {
+            comparisonResult = "1 === '1' is false";
+        }
+
+        document.getElementById('comparison-result').innerText = comparisonResult;
+
+        let cuteArray = cats.map(cat => `${cat.name} is cute!`);
+        document.getElementById('map-result').innerText = cuteArray.join(', ');
+    </script>
+</body>
+</html>
