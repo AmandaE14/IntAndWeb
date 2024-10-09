@@ -1,0 +1,7 @@
+1. AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes.
+2. HTTP is a protocol for sending data between clients and servers over the internet.
+3. REST is not a protocol or a standard, but an architectural style of organizing our code so that requests act upon resources in a standardized way.
+4. JSON is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays.
+5. An application programming interface is a way for two or more computer programs or components to communicate with each other.
+6. Each time a script enters a new execution context, variables, functions, and arguments are created, this is called execution context and hoisting.
+7. Closures are the ability of a function to remember the variables and functions that are declared in its outer scope.

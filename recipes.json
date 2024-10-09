@@ -1,0 +1,20 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "title": "Fettuccine Alfredo",
+        "description": "A creamy pasta dish prepared with fettuccine noodles with a rich Alfredo sauce of butter, milk, and Parmesan cheese."
+      },
+      {
+        "id": 2,
+        "title": "Pizza",
+        "description": "A traditional Italian dish made up of a flat, round dough baked with tomato sauce, mozzarella, and other ingredients."
+      },
+      {
+        "id": 3,
+        "title": "Chicken Tacos",
+        "description": "Mexican-style tacos with seasoned chicken, lettuce, tomatoes, cheese, and salsa can have soft or hard shells."
+      }
+    ]
+  }
+  
