@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM and Events</title>
+    <style>
+        #message {
+            width: fit-content;
+            padding: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="list-container">
+        <ul id="ul">
+            <li class="list-item" id="first-list-item">first</li>
+            <li class="list-item">second</li>
+            <li class="list-item">third</li>
+        </ul>
+    </div>
+
+    <ul id="cats-list"></ul>
+
+    <form id="myForm">
+        <label for="myInput">Enter something: </label>
+        <input type="text" id="myInput" name="myInput">
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        const listItems = document.querySelectorAll('.list-item');
+        listItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                listItems.forEach(function(li) {
+                    li.style.color = 'blue';
+                });
+            });
+        });
+
+        const cats = [
+            { name: 'Charlie', adoptionStatus: 'available' },
+            { name: 'Lily', adoptionStatus: 'not-available' },
+            { name: 'Coco', adoptionStatus: 'available' },
+            { name: 'Oreo', adoptionStatus: 'not-available' },
+            { name: 'Luna', adoptionStatus: 'available' },
+            { name: 'Milo', adoptionStatus: 'available' },
+            { name: 'Lola', adoptionStatus: 'not-available' },
+            { name: 'Leo', adoptionStatus: 'available' },
+            { name: 'Willow', adoptionStatus: 'available' },
+            { name: 'Bella', adoptionStatus: 'not-available' },
+            { name: 'Max', adoptionStatus: 'available' },
+            { name: 'Cleo', adoptionStatus: 'available' },
+            { name: 'Lucy', adoptionStatus: 'not-available' },
+            { name: 'Daisy', adoptionStatus: 'available' }
+        ];
+
+        const catsList = document.getElementById('cats-list');
+        cats.forEach(function(cat) {
+            const li = document.createElement('li');
+            li.textContent = `${cat.name} - ${cat.adoptionStatus}`;
+            catsList.appendChild(li);
+        });
+
+        const myForm = document.getElementById('myForm');
+        const messageDiv = document.getElementById('message');
+
+        myForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const inputValue = document.getElementById('myInput').value;
+            messageDiv.innerHTML = ''; 
+
+            if (inputValue === '') {
+                messageDiv.textContent = 'Please Provide a Value';
+                messageDiv.style.backgroundColor = 'red';
+            } else {
+                messageDiv.textContent = 'Success';
+                messageDiv.style.backgroundColor = 'green';
+            }
+        });
+    </script>
+
+</body>
+</html>
