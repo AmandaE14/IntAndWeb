@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Current Temperature in NYC</title>
+</head>
+<body>
+
+  <h1>Current Temperature in NYC</h1>
+  <p id="temperature-display">Loading temperature...</p>
+
+  <script>
+    function fetchTemperature() {
+      const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=40.7143&longitude=-74.006&current_weather=true&temperature_unit=fahrenheit&timezone=America%2FNew_York';
+      
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const temperature = data.current_weather.temperature;
+          document.getElementById('temperature-display').innerText = `Temperature: ${temperature}°F`;
+        })
+        .catch(error => {
+          console.error('Error fetching temperature:', error);
+          document.getElementById('temperature-display').innerText = 'Error loading temperature';
+        });
+    }
+    
+    window.onload = fetchTemperature;
+  </script>
+
+</body>
+</html>

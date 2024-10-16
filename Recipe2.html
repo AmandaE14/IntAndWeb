@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Manager</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .recipe-list {
+            margin-bottom: 20px;
+        }
+        .recipe {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 1rem;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recipe Manager</h1>
+
+    <!-- Display list of recipes -->
+    <div id="recipe-container" class="recipe-list"></div>
+
+    <!-- Form to add new recipe -->
+    <h2>Add New Recipe</h2>
+    <form id="recipe-form">
+        <input type="text" id="title" placeholder="Recipe Title" required />
+        <textarea id="description" placeholder="Description" rows="4" required></textarea>
+        <button type="submit">Add Recipe</button>
+    </form>
+
+    <script>
+        function renderRecipes(recipes) {
+            $('#recipe-container').empty();
+            recipes.forEach(recipe => {
+                $('#recipe-container').append(`
+                    <div class="recipe">
+                        <h3>${recipe.title}</h3>
+                        <p>${recipe.description}</p>
+                    </div>
+                `);
+            });
+        }
+
+        function fetchRecipes() {
+            $.get('http://localhost:3000/recipes', function(data) {
+                renderRecipes(data);
+            });
+        }
+
+        $('#recipe-form').on('submit', function(e) {
+            e.preventDefault();
+            const title = $('#title').val();
+            const description = $('#description').val();
+
+            $.ajax({
+                url: 'http://localhost:3000/recipes',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    title: title,
+                    description: description
+                }),
+                success: function() {
+                    fetchRecipes();
+                    $('#recipe-form')[0].reset();
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            fetchRecipes();
+        });
+    </script>
+</body>
+</html>
