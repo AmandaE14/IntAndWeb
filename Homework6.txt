@@ -1,0 +1,5 @@
+1. PHP is a server-side programming language designed for web development. It organizes data, handles user interactions, and creates dynamic web pages on the server before sending them to the client in HTML format.
+2. Both languages manage data and communicate with databases. PHP executes on the server, but JavaScript executes in the client's browser for dynamic interactions.
+3. PHP is popular because of its simplicity of use, strong database connectivity, substantial community support, and built-in web developing capabilities.
+4. If the require statement fails, it stops the script with a fatal error, whereas the include statement produces a warning and carries on with execution. An error is generated by an undefined variable when a variable from a file that hasn't been included is used.
+5. While var_dump offers comprehensive details on a variable's data type and value and is helpful for troubleshooting intricate data structures, echo just displays strings.
