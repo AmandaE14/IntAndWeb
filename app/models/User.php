@@ -15,10 +15,6 @@ class User {
                 'id' => '2',
                 'name' => 'nathan'
             ],
-//            [
-//                'id' => '3',
-//                'name' => "<script>alert('yo')</script>"
-//            ],
         ];
 
         if (!empty($params['name'])) {

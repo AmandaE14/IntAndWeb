@@ -7,7 +7,8 @@ class UserController
 {
     public function getUsers() {
         $params = [
-            'name' => $_GET['name'] ?? null,
+            //ternary shorthand, if left if true assign it, and if not assign right
+            'name' => $_GET['name'] ?: null,
         ];
         $userModel = new User();
         $users = $userModel->getAllUsersByName($params);
@@ -18,9 +19,9 @@ class UserController
 
     public function saveUser() {
         //get post data from our form post
-        $name = $_POST['name'] ? $_POST['name'] : null;
-        $age = $_POST['age'] ? $_POST['age'] : null;
-        $email = $_POST['email'] ? $_POST['email'] : null;
+        $name = $_POST['name'] ?: null;
+        $age = $_POST['age'] ?: null;
+        $email = $_POST['email'] ?: null;
         $errors = [];
 
         //validate and sanitize name
