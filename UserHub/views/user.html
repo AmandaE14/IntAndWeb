@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    fetch('http://localhost:8888/index.php?page=users') // Use 'page' to match PHP code
+        .then(response => {
+            console.log('Response:', response);
+            return response.json();
+        })
+        .then(users => {
+            console.log('Users data:', users);
+            const userList = document.createElement('ul');
+            users.forEach(user => {
+                const li = document.createElement('li');
+                li.textContent = `${user.name} - ${user.email}`;
+                userList.appendChild(li);
+            });
+            document.body.appendChild(userList);
+        })
+        .catch(error => console.error('Error loading the users:', error));
+});
+    </script>
+</head>
+<body>
+    <h1>User List</h1>
+</body>
+</html>

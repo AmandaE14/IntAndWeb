@@ -1,0 +1,5 @@
+1. In PHP, a class serves as a blueprint for building objects, specifying their attributes and functions. Object-Oriented Programming OOP uses classes and objects to organize software. An object is an instance of a class.
+2. In OOP, abstract classes serve as a foundation for subclass creation and offer default functionality; derived classes must implement specific methods.
+3. PHP superglobals are predefined variables, such as $_SERVER, that are available across all scopes and supply data like the method and request URI.
+4. In PHP, to utilize a class using namespaces, define the namespace in the class file first, then import it using the use keyword or instantiate it using the whole namespace path.
+5. An application can be divided into three parts using the Model-View-Controller design pattern: the Model handles data logic, the View handles UI logic, and the Controller connects the Model and View and processes requests, improving code structure and maintainability.
