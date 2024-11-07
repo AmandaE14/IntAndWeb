@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Post</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 15px;
+        }
+        #addPostForm {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            align-self: flex-start;
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+        #errorMessages {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add New Post</h1>
+    <form id="addPostForm">
+        <input type="text" name="title" placeholder="Title" required>
+        <textarea name="content" placeholder="Content" rows="4" required></textarea>
+        <button type="submit">Add Post</button>
+    </form>
+    <div id="errorMessages"></div>
+
+    <script>
+        document.getElementById('addPostForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch('http://localhost:8888/index.php?route=add-post', {
+                method: 'POST',
+                body: formData
+            });
+        
+            const text = await response.text();
+        
+            try {
+                const data = JSON.parse(text);
+                if (response.ok) {
+                    document.getElementById('errorMessages').innerHTML = 'Post added successfully!';
+                    console.log('Success:', data);
+                } else {
+                    document.getElementById('errorMessages').innerHTML = Object.values(data).join('<br>');
+                    console.error('Error:', data);
+                }
+            } catch (error) {
+                console.error('JSON parsing error:', error);
+                document.getElementById('errorMessages').innerHTML = 'An error occurred: ' + text; 
+            }
+        });
+        </script>        
+</body>
+</html>

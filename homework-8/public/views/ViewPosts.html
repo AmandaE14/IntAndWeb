@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Posts</title>
+</head>
+<body>
+    <h1>Search Posts</h1>
+    <form id="searchForm">
+        <input type="text" id="searchTitle" name="title" placeholder="Enter title to search">
+        <button type="submit">Search</button>
+    </form>
+    <div id="posts"></div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const title = document.getElementById('searchTitle').value;
+            try {
+                const response = await fetch(`http://localhost:8888/index.php?route=posts&title=${encodeURIComponent(title)}`, {
+                    method: 'GET'
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not OK');
+                }
+                const data = await response.json();
+                const postsContainer = document.getElementById('posts');
+                postsContainer.innerHTML = '';
+
+                if (data.length === 0) {
+                    postsContainer.innerHTML = '<p>No posts found.</p>';
+                } else {
+                    data.forEach(post => {
+                        postsContainer.innerHTML += `<p><strong>${post.title}</strong>: ${post.content}</p>`;
+                    });
+                }
+            } catch (error) {
+                document.getElementById('posts').innerHTML = `An error occurred: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
