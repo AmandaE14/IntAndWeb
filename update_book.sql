@@ -1,0 +1,1 @@
+UPDATE books SET name = 'New Book Name' WHERE id = 1;

@@ -1,0 +1,5 @@
+1. The standard language for building and administering databases is SQL, and MySQL is a particular relational database management system that makes use of SQL. Relational databases make it possible to obtain data by examining the connections between different data points.
+2. In SQL, normalization arranges tables and columns to minimize duplication and preserve data integrity, enabling efficient data scaling.
+3. Each entry in a database is uniquely identified by its primary key, which must be distinct, non-null, and present in only one table. By making reference to the primary key, a foreign key connects two tables.
+4. One-to-one, one-to-many, and many-to-many are the three forms of relationships. Many-to-many links records across both tables, typically through a join table; one-to-many links one record in one table to multiples in another; and one-to-one links one record in each table.
+5. An inner join only returns records that match in both tables, but a left join delivers all records from the left table plus matching ones from the right.
