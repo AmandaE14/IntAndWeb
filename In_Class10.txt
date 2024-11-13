@@ -1,0 +1,10 @@
+1. Built-in class that comes packaged with PHP to make it very easy for you to interact with databases is called PDOs.
+2. We instantiate PDO objects with DSN strings, which represent the connection to our database.
+3. A .env file is a file containing environment variables.
+4. A gitignore file is a text file that tells Git which files or folders to ignore in a project; we will need Git to ignore our .env file.
+5. The PDO query method takes as an argument a SQL query and returns the results back as a PDO statement object, which we can then get data out of.
+6. From the PDO statement object, we use the fetch method to return a single row of the SQL result set.
+7. From the PDO statement object, we use the fetchAll method to return all rows of the SQL result set.
+8. A prepared statement is a parameterized and reusable SQL query which forces the developer to write the SQL command and the user-provided data separately.
+9. We call the prepare method with a SQL query with any dynamic parameters subbed in with names prefixed with colons.
+10. A SQL injection hack is when a hacker tries to run malicious SQL code in a database.
